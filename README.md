@@ -186,9 +186,9 @@ If you encounter any issues while setting up or running the project — whether 
 ### 📧 Contact
 
 **Rishu Jaiswal**  
-📩 Email: [rishu.cse48@gmail.com](mailto:rishu.cse48@gmail.com)  
-💬 Telegram: [@rishu_jaiz](https://t.me/rishu_jaiz)  
-🐙 GitHub: [Rishu-Jaiz](https://github.com/Rishu-Jaiz)
+📩 Email: [jaiswal733rishu@gmail.com](mailto:jaiswal733rishu@gmail.com)  
+📞 Phone: +91-9113308603
+📱 WhatsApp: [Click to Chat](https://wa.me/+91-9113308603)
 
 ## 🧑‍💻 Author & License
 
