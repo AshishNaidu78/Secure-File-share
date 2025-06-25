@@ -1,0 +1,23 @@
+# Ignore Ganache database folders
+ganache-db/
+chaindata/
+db/
+
+# Ignore Ganache workspace files
+*.log
+*.pid
+*.lock
+
+# Common Node.js ignores if using Truffle/Hardhat
+node_modules/
+build/
+artifacts/
+cache/
+
+# OS-specific
+.DS_Store
+Thumbs.db
+
+# Env and config files (if present)
+.env
+.env.*
