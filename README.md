@@ -186,9 +186,9 @@ If you encounter any issues while setting up or running the project — whether 
 ### 📧 Contact
 
 **Rishu Jaiswal**  
-📩 Email: [jaiswal733rishu@gmail.com](mailto:jaiswal733rishu@gmail.com)  
-📞 Phone: +91-9113308603
-📱 WhatsApp: [Click to Chat](https://wa.me/+91-9113308603)
+📩 Email: [jaiswal733rishu@gmail.com](mailto:jaiswal733rishu@gmail.com)   
+📞 Phone: +91-9113308603   
+📱 WhatsApp: [Click to Chat](https://wa.me/919113308603)
 
 ## 🧑‍💻 Author & License
 
