@@ -179,6 +179,16 @@ npm start
 - Use Hardhat or Truffle for CI/CD blockchain deployment
 
 ---
+## 🙋‍♂️ Help & Contact
+
+If you encounter any issues while setting up or running the project — whether it's related to dependencies, environment configuration, smart contract deployment, or blockchain interaction — feel free to reach out for support.
+
+### 📧 Contact
+
+**Rishu Jaiswal**  
+📩 Email: [rishu.cse48@gmail.com](mailto:rishu.cse48@gmail.com)  
+💬 Telegram: [@rishu_jaiz](https://t.me/rishu_jaiz)  
+🐙 GitHub: [Rishu-Jaiz](https://github.com/Rishu-Jaiz)
 
 ## 🧑‍💻 Author & License
 
@@ -189,5 +199,3 @@ Created with dedication 💡 by
 - **Ravi Charan**
 
 This project is open-source — you are free to use, modify, and share it with attribution.
-
----
