@@ -102,7 +102,7 @@ npm install axios
 
 ### ✅ 5. Configure `.env` File
 
-Create `.env` file in `backend/blockchain/`:
+Create `.env` file in `ganache/`:
 
 ```
 CONTRACT_ADDRESS=0xYourContractAddressHere
