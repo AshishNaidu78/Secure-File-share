@@ -1,0 +1,122 @@
+/* Add to public/index.html in <head>:
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+*/
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #1b1f27;
+  font-family: 'Poppins', sans-serif;
+  color: #ffffff;
+}
+
+/* Main App Container */
+.container {
+  max-width: 960px;
+  margin: 40px auto;
+  padding: 40px;
+  background: #212b38;
+  border-radius: 20px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.4);
+}
+
+/* Neon Gradient Header */
+h1 {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 40px;
+  background: linear-gradient(to right, #3a8ef6, #9f5afd);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 700;
+}
+
+/* Section Titles */
+h2 {
+  font-size: 1.4rem;
+  color: #9fbcfd;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Section Container */
+.section-card {
+  background-color: #2a3242;
+  border-radius: 14px;
+  padding: 25px;
+  margin-bottom: 40px;
+  border: 1px solid #3a8ef6;
+  transition: box-shadow 0.3s ease;
+}
+
+.section-card:hover {
+  box-shadow: 0 0 15px #3a8ef6;
+}
+
+/* Form Styling */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+input[type="text"],
+input[type="file"] {
+  padding: 12px 14px;
+  border-radius: 8px;
+  border: 1px solid #444;
+  font-size: 1rem;
+  background: #2f3645;
+  color: #fff;
+  transition: all 0.3s ease;
+}
+
+input::file-selector-button {
+  background-color: #3a8ef6;
+  color: #fff;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  margin-right: 12px;
+  cursor: pointer;
+}
+
+input:focus {
+  border-color: #3a8ef6;
+  box-shadow: 0 0 0 3px rgba(58, 142, 246, 0.25);
+  outline: none;
+}
+
+/* Gradient Button */
+button {
+  background: linear-gradient(to right, #3a8ef6, #9f5afd);
+  color: white;
+  font-weight: 600;
+  border: none;
+  padding: 12px 16px;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 14px rgba(58, 142, 246, 0.45);
+}
+
+/* Result Display */
+pre {
+  background: #1f2733;
+  padding: 15px;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  border-left: 4px solid #3a8ef6;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  color: #dce1e7;
+  margin-top: 10px;
+}
