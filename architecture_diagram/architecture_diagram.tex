@@ -1,0 +1,111 @@
+% filepath: architecture_diagram/architecture_diagram.tex
+\documentclass{standalone}
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric, arrows.meta, positioning, fit}
+
+\begin{document}
+\begin{tikzpicture}[
+  font=\small,
+  node distance=2.2cm and 2.5cm,
+  every node/.style={align=center},
+  box/.style={draw, rounded corners, minimum width=3.5cm, minimum height=1.2cm, fill=blue!8},
+  db/.style={draw, cylinder, shape border rotate=90, aspect=0.25, minimum height=1.2cm, minimum width=1.5cm, fill=green!8},
+  cloud/.style={draw, cloud, cloud puffs=10, cloud ignores aspect, minimum width=2.5cm, minimum height=1.2cm, fill=orange!10},
+  contract/.style={draw, rectangle, minimum width=2.5cm, minimum height=1.2cm, fill=yellow!10, thick, dashed},
+  arrow/.style={-Latex, thick},
+  dashedarrow/.style={-Latex, thick, dashed}
+]
+
+% User
+\node[box, fill=gray!10] (user) {User\\(Browser)};
+
+% Frontend
+\node[box, right=of user] (frontend) {React Frontend\\
+    \texttt{src/}\\
+    \texttt{UploadForm.js}\\
+    \texttt{DownloadForm.js}\\
+    \texttt{VerifyForm.js}\\
+    \texttt{KeyGenerator.js}
+};
+
+% Backend
+\node[box, right=of frontend] (backend) {Flask Backend\\
+    \texttt{app.py}\\
+    \texttt{final\_app.py}\\
+    \texttt{db.py}\\
+    \texttt{key\_db.py}\\
+    \texttt{upload\_to\_cloudinary.py}\\
+    \texttt{test\_register.py}
+};
+
+% Crypto
+\node[box, below=of backend, xshift=-2.5cm, fill=purple!10] (crypto) {Crypto Modules\\
+    \texttt{crypto/}\\
+    AES, RSA, Signatures
+};
+
+% Blockchain
+\node[contract, above=of backend, xshift=2.5cm] (blockchain) {Blockchain Layer\\
+    (Ganache)\\
+    \texttt{blockchain/}\\
+    \texttt{SmartContract.sol}\\
+    \texttt{contract.py}
+};
+
+% Cloud Storage
+\node[cloud, below=of backend, xshift=2.5cm] (cloud) {Cloud Storage\\
+    (Cloudinary / uploads/)\\
+    \texttt{upload\_to\_cloudinary.py}\\
+    \texttt{uploads/}
+};
+
+% Local Storage (Keys/Uploads)
+\node[db, below=of crypto, xshift=0cm] (folders) {Local Storage\\
+    \texttt{backend/keys/}\\
+    \texttt{backend/uploads/}
+};
+
+% Metadata DB (optional)
+\node[db, below=of cloud, xshift=0cm] (metadata) {Metadata DB\\
+    (MongoDB/JSON)\\
+    Key Metadata
+};
+
+% Connections
+\draw[arrow] (user) -- node[above]{HTTP (Forms)} (frontend);
+\draw[arrow] (frontend) -- node[above]{REST API (Axios)} (backend);
+
+% Backend to Crypto
+\draw[arrow] (backend) -- node[right, xshift=0.1cm]{Encrypt/Decrypt\\Sign/Verify} (crypto);
+
+% Backend to Blockchain
+\draw[arrow] (backend) -- ++(2.5,1.5) |- node[right, xshift=0.2cm, yshift=-0.2cm]{Register/Verify\\File Hash} (blockchain);
+
+% Backend to Cloud
+\draw[arrow] (backend) -- ++(2.5,-1.5) |- node[right, xshift=0.2cm, yshift=0.2cm]{Upload/Download\\Encrypted File} (cloud);
+
+% Backend to Local Folders
+\draw[arrow] (backend) -- ++(-2.5,-1.5) |- node[left, xshift=-0.2cm, yshift=0.2cm]{Store/Retrieve\\Files/Keys} (folders);
+
+% Backend to Metadata DB
+\draw[arrow] (backend) -- ++(2.5,-3.5) |- node[right, xshift=0.2cm, yshift=0.2cm]{Store/Retrieve\\Key Metadata} (metadata);
+
+% Crypto to Folders
+\draw[arrow] (crypto) -- node[left]{Store Keys} (folders);
+
+% User download
+\draw[arrow] (frontend) -- ++(0,-2.5) -| node[below, xshift=0.2cm]{File Download} (user);
+
+% Legend
+\node[draw, rectangle, fill=white, anchor=north west, align=left, font=\scriptsize, xshift=0.2cm, yshift=-0.2cm] at ($(cloud.south east)+(2.2,-0.5)$) {
+\textbf{Legend:}\\
+\textcolor{blue}{\textbf{Blue}}: Application Layer\\
+\textcolor{orange}{\textbf{Orange}}: Cloud Storage\\
+\textcolor{green}{\textbf{Green}}: Database\\
+\textcolor{yellow!80!black}{\textbf{Yellow}}: Blockchain\\
+\textcolor{purple}{\textbf{Purple}}: Crypto Layer\\
+\textbf{Dashed}: Smart Contract
+};
+
+\end{tikzpicture}
+\end{document}
