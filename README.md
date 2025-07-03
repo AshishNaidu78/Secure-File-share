@@ -183,13 +183,6 @@ npm start
 
 If you encounter any issues while setting up or running the project — whether it's related to dependencies, environment configuration, smart contract deployment, or blockchain interaction — feel free to reach out for support.
 
-### 📧 Contact
-
-**Rishu Jaiswal**  
-📩 Email: [jaiswal733rishu@gmail.com](mailto:jaiswal733rishu@gmail.com)   
-📞 Phone: +91-9113308603   
-📱 WhatsApp: [Click to Chat](https://wa.me/919113308603)
-
 ## 🧑‍💻 Author & License
 
 Created with dedication 💡 by 
